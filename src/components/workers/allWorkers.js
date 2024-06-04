@@ -22,7 +22,7 @@ export default function AllWorkers() {
   const [columns, setColumns] = useState([]);
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState("");
-  const [selectedWorkers, setSelectedWorkers] = useState([]);
+  const [setSelectedWorkers] = useState([]);
   const [filteredWorkers, setFilteredWorkers] = useState([]);
   dispatch({ type: "SET_SELECTED_WORKER", payload: null });
 
@@ -34,7 +34,7 @@ export default function AllWorkers() {
     if (workers.length > 0) {
       fetchColumns();
     }
-  }, [workers]);
+  }, [workers],fetchColumns);
 
   const fetchColumns = () => {
     try {
